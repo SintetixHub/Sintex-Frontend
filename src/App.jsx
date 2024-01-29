@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Login from "./pages/Login";
 import Index from "./pages/Index";
 import Register from "./pages/Register";
+import Posts from "./pages/Posts";
 
 export default function App() {
   return (
@@ -14,6 +15,8 @@ export default function App() {
           <Route path="/" element={<Index/>} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Register />} />
+          <Route path="/posts" element={<Posts />} />
+
         </Routes>
       </div>
       </BrowserRouter>
