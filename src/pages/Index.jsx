@@ -2,6 +2,6 @@
 
 export default function Index() {
   return (
-    <div>index</div>
+    <div className="text-2xl">index</div>
   )
 }
