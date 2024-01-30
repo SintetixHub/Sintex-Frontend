@@ -2,10 +2,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import UserContext from "./context/useUserContext";
 import Navbar from "./components/Navbar/Navbar";
 
+
 //Routes
-import Login from "./pages/Login";
 import Index from "./pages/Index";
-import Register from "./pages/Register";
 import Posts from "./pages/Posts";
 import Post from "./pages/Post";
 import Users from "./pages/Users";
@@ -15,6 +14,7 @@ import Project from "./pages/Project";
 import NewProject from "./pages/NewProject";
 import NewPost from "./pages/NewPost";
 import Emblems from "./pages/Emblems";
+import Login from "./pages/Login";
 
 export default function App() {
   return (
@@ -26,7 +26,6 @@ export default function App() {
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Register />} />
               <Route path="/posts" element={<Posts />} />
               <Route path="/post/:title" element={<Post />} />
               <Route path="/users" element={<Users />} />
@@ -36,6 +35,7 @@ export default function App() {
               <Route path="/emblems" element={<Emblems />} />
               <Route path="/newProject" element={<NewProject />} />
               <Route path="/newPost" element={<NewPost />} />
+              <Route path="/form" element={<Login />} /> {/* Agrega tu componente Form como una ruta */}
             </Routes>
           </div>
         </UserContext>
