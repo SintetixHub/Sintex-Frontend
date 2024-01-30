@@ -2,7 +2,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import UserContext from "./context/useUserContext";
 import Navbar from "./components/Navbar/Navbar";
 
-
 //Routes
 import Index from "./pages/Index";
 import Posts from "./pages/Posts";
@@ -22,7 +21,7 @@ export default function App() {
       <BrowserRouter>
         <UserContext>
           <Navbar />
-          <div className="max-w-6xl m-auto">
+          <div className="max-w-6xl m-auto ">
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/login" element={<Login />} />
@@ -35,7 +34,7 @@ export default function App() {
               <Route path="/emblems" element={<Emblems />} />
               <Route path="/newProject" element={<NewProject />} />
               <Route path="/newPost" element={<NewPost />} />
-              <Route path="/form" element={<Login />} /> {/* Agrega tu componente Form como una ruta */}
+              {/* Agrega tu componente Form como una ruta */}
             </Routes>
           </div>
         </UserContext>
