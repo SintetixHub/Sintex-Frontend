@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import UserContext from "./context/useUserContext";
 import Navbar from "./components/Navbar/Navbar";
+import SearchBar from "./components/SearchBar/SearchBar";
 
 //Routes
 import Index from "./pages/Index";
@@ -21,6 +22,7 @@ export default function App() {
       <BrowserRouter>
         <UserContext>
           <Navbar />
+          <SearchBar />
           <div className="max-w-6xl m-auto ">
             <Routes>
               <Route path="/" element={<Index />} />
