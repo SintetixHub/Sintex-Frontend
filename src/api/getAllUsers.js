@@ -1,6 +1,6 @@
 const GETUSERS_ENDPOINT = `${import.meta.env.VITE_SERVER}/api/user/`;
 
-export const signup = async () => {
+export const getAll = async () => {
   try {
     const response = await fetch(GETUSERS_ENDPOINT);
     return await response.json();
