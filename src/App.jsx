@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import UserContext from "./context/useUserContext";
 import Navbar from "./components/Navbar/Navbar";
 import SearchBar from "./components/SearchBar/SearchBar";
+import PostCard  from "./components/PostCard/PostCard"; // Asegúrate de que la ruta de importación sea correcta
 
 //Routes
 import Index from "./pages/Index";
@@ -23,11 +24,13 @@ export default function App() {
         <UserContext>
           <Navbar />
           <SearchBar />
+            
           <div className="max-w-6xl m-auto ">
             <Routes>
+              
               <Route path="/" element={<Index />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/posts" element={<Posts />} />
+              <Route path="/posts" element={<Posts avatarUrl="https://example.com/avatar.jpg" title="Título del blog" text="Este es el texto del blog" />} />
               <Route path="/post/:title" element={<Post />} />
               <Route path="/users" element={<Users />} />
               <Route path="/user/:username" element={<User />} />
