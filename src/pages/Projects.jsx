@@ -1,6 +1,10 @@
+import SearchBar from "../components/SearchBar/SearchBar";
 
 export default function Projects() {
   return (
-    <div>Projects</div>
-  )
+    <div>
+      <SearchBar />
+      Project
+    </div>
+  );
 }

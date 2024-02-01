@@ -1,14 +1,20 @@
-import React from 'react';
+import { Link } from "react-router-dom";
 
+// eslint-disable-next-line react/prop-types
 const BlogPost = ({ avatarUrl, title, text }) => {
   return (
-    <div className="flex items-start space-x-4 m-5 p-3 bg-gradient-to-t from-sky-800 to-indigo-900 dark:from-orange-900 dark:to-rose-900  rounded-lg">
+    <Link
+      to="/"
+      className="flex items-center space-x-4 my-5 border-2 dark:border-zinc-600 rounded-lg p-6 hover:bg-zinc-200 dark:hover:bg-zinc-800"
+    >
       <img className="w-24 h-24 rounded-full" src={avatarUrl} alt="Avatar" />
       <div>
-        <h2 className="text-2xl font-bold text-gray-400 dark:text-black">{title}</h2>
-        <p className="mt-2 text-gray-300">{text}</p>
+        <h2 className="text-2xl font-bold text-gray-800 dark:text-zinc-200">
+          {title}
+        </h2>
+        <p className="mt-2 text-gray-600 dark:text-zinc-400">{text}</p>
       </div>
-    </div>
+    </Link>
   );
 };
 
