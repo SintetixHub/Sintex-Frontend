@@ -4,8 +4,7 @@ const userContext = createContext();
 
 // eslint-disable-next-line react/prop-types
 export default function UserContext({ children }) {
-  // const [user, setUser] = useState(null);
-  const [user, setUser] = useState({ username: "Ebanx3", id: "123123" });
+  const [user, setUser] = useState(null);
 
   return (
     <userContext.Provider value={{ user, setUser }}>
