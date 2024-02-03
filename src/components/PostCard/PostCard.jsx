@@ -1,24 +1,27 @@
-import { useEffect, useState } from 'react';
-import { getAllPosts } from '../../api/getPosts';
+/* eslint-disable react/prop-types */
+import { Link } from "react-router-dom";
 
-const BlogPosts = () => {
-  const [BlogPost, setPosts] = useState([]);
-
-  useEffect(() => {
-    ( async () => {
-      const data = await getAllPosts();
-      setPosts(data);
-    } ) ();
-
-  }, []);
-
+const PostCard = ({ post }) => {
+  console.log(post);
   return (
-    <div>
-      {PostCard.map((post) => (
-        <BlogPost key={post.id} avatarUrl={post.avatarUrl} title={post.title} text={post.text} />
-      ))}
-    </div>
+    <Link className="flex rounded-xl py-4 px-8 bg-zinc-800">
+      <div className="flex flex-col gap-4 items-center">
+        <img
+          src={post.authorAvatar}
+          alt={`${post.authorUsername} avatar`}
+          className="h-44 w-44 rounded-full object-cover border-2 border-zinc-600"
+        />
+        <span>{post.authorUsername}</span>
+      </div>
+      <div className="p-4 flex flex-col gap-4 flex-1">
+        <div className="flex justify-between">
+          <h2 className="text-xl font-bold">{post.title}</h2>
+          <span className="text-zinc-500 p-2">{post.createdAt}</span>
+        </div>
+        <p>{post.content}</p>
+      </div>
+    </Link>
   );
 };
 
-export default BlogPosts;
+export default PostCard;

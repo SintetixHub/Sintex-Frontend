@@ -1,47 +1,25 @@
+import { useState, useEffect } from "react";
 import PostCard from "../components/PostCard/PostCard";
 import SearchBar from "../components/SearchBar/SearchBar";
+import { getAllPosts } from "../api/getPosts";
 
 export default function Posts() {
-  const text = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.`;
+  const [posts, setPosts] = useState([]);
 
-  const posts = [
-    {
-      avatarUrl: "/LennyFavIcon.jpeg",
-      title: "Ejemplo de título del blog",
-      text: text,
-    },
-    {
-      avatarUrl: "/LennyFavIcon.jpeg",
-      title: "Ejemplo de título del blog",
-      text: text,
-    },
-    {
-      avatarUrl: "/LennyFavIcon.jpeg",
-      title: "Ejemplo de título del blog",
-      text: text,
-    },
-    {
-      avatarUrl: "/LennyFavIcon.jpeg",
-      title: "Ejemplo de título del blog",
-      text: text,
-    },
-  ];
+  useEffect(() => {
+    (async () => {
+      const response = await getAllPosts();
+      if (response.success) {
+        setPosts(response.data);
+      }
+    })();
+  }, []);
 
   return (
     <div className="space-y-4 ">
       <SearchBar />
-      {posts.map((post, index) => (
-        <PostCard
-          key={index}
-          avatarUrl={post.avatarUrl}
-          title={post.title}
-          text={post.text}
-          avatarClass="w-24 h-24"
-          titleClass="font-bold text-2xl"
-          textClass="mt-2"
-        />
+      {posts.map((post) => (
+        <PostCard key={post._id} post={post} />
       ))}
     </div>
   );

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
 export default function UserCard({ user }) {
-  console.log(user);
   return (
     <Link
       to=""
