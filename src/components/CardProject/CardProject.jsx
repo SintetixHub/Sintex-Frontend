@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const CardProject = ({ project }) => {
     return (
-        <Link to={`/project/${project._id}`} className="flex rounded-xl py-4 px-8 bg-zinc-300 text-black dark:text-white dark:bg-zinc-800">
+        <Link to={`/project/${project.title}`} className="flex rounded-xl py-4 px-8 bg-zinc-300 text-black dark:text-white dark:bg-zinc-800">
             <div className="flex flex-col gap-4 items-center">
                 <img
                     src={project.AuthorAvatar}

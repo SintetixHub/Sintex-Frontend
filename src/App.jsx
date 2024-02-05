@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import UserContext from "./context/useUserContext";
 import Navbar from "./components/Navbar/Navbar";
 
+
 //Routes
 import Index from "./pages/Index";
 import Posts from "./pages/Posts";
@@ -14,6 +15,7 @@ import NewProject from "./pages/NewProject";
 import NewPost from "./pages/NewPost";
 import Emblems from "./pages/Emblems";
 import Login from "./pages/Login";
+
 
 export default function App() {
   return (
@@ -31,7 +33,7 @@ export default function App() {
               <Route path="/users" element={<Users />} />
               <Route path="/user/:username" element={<User />} />
               <Route path="/projects" element={<Projects />} />
-              <Route path="/project/:name" element={<Project />} />
+              <Route path="/project/" element={<Project />} />
               <Route path="/emblems" element={<Emblems />} />
               <Route path="/newProject" element={<NewProject />} />
               <Route path="/newPost" element={<NewPost />} />

@@ -7,6 +7,9 @@ export default function UserMenu({ username }) {
       <Link to={`/user/${username}`} className="hover:text-zinc-400">
         Perfil
       </Link>
+      <Link to="/project" className="hover:text-zinc-400">
+        Project
+      </Link>
       <Link to="/newProject" className="hover:text-zinc-400">
         Nuevo Proyecto
       </Link>
