@@ -1,3 +1,7 @@
 export default function EditUserModal() {
-  return <div>EditUserModal</div>;
+  return (
+    <div className="flex flex-col bg-slate-500">
+      <h2>Modificar perfil</h2>
+    </div>
+  );
 }
