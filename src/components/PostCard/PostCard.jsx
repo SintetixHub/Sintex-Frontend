@@ -4,14 +4,17 @@ import { Link } from "react-router-dom";
 const PostCard = ({ post }) => {
   console.log(post);
   return (
-    <Link className="flex rounded-xl py-4 px-8 bg-zinc-300 text-black dark:text-white dark:bg-zinc-800">
+    <Link
+      className="flex rounded-xl py-4 px-8 bg-zinc-200 text-black hover:bg-zinc-300 dark:text-white dark:bg-zinc-800 dark:hover:bg-zinc-700"
+      to={`/post/${"no"}`}
+    >
       <div className="flex flex-col gap-4 items-center">
         <img
           src={post.authorAvatar}
           alt={`${post.authorUsername} avatar`}
-          className="h-44 w-44 rounded-full object-cover border-2 border-black dark:border-zinc-400"
+          className="h-40 w-40 rounded-full object-cover "
         />
-        <span>{post.authorUsername}</span>
+        <span className="font-bold">{post.authorUsername}</span>
       </div>
       <div className="p-4 flex flex-col gap-4 flex-1">
         <div className="flex justify-between">

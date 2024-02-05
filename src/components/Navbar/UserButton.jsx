@@ -18,7 +18,7 @@ export default function UserButton({ username }) {
       >
         {username}
       </button>
-      {menuVisible && <UserMenu userId={username} />}
+      {menuVisible && <UserMenu username={username} />}
     </>
   );
 }

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function UserCard({ user }) {
   return (
     <Link
-      to=""
+      to={`/user/${user.username}`}
       className="flex flex-col p-6 bg-zinc-100 dark:bg-zinc-800 items-center gap-4 rounded-xl shadow-md hover:bg-zinc-200 dark:hover:bg-zinc-700"
     >
       {user.urlAvatar != undefined ? (
