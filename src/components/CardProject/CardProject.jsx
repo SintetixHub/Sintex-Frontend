@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
 const CardProject = ({ project }) => {
-  console.log(project);
+  const link = project.title.replaceAll(" ", "_");
   return (
     <Link
-      to={`/project/${project.title}`}
+      to={`/project/${link}`}
       className="flex flex-col  rounded-xl p-8 bg-zinc-200 text-black dark:text-white dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700"
     >
       <h2 className="text-2xl font-bold">{project.title}</h2>
