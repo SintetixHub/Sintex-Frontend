@@ -49,9 +49,8 @@ const ProjectDetails = ({ project }) => {
       </div>
       <div className="grow-[1] flex gap-4 flex-col">
         <MembersList members={project.membersList} />
-        {user != null && user.username !== project.authorName ? (
-          <JoinButton />
-        ) : (
+        {user != null && user.username !== project.authorName && <JoinButton />}
+        {user != null && user.username === project.authorName && (
           <PendingMembers members={project.membersPending} />
         )}
       </div>
